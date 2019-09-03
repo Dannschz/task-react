@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(26, 53, 75);
+
+    .app-title {
+        margin-left: 100px;
+        font-weight: normal;
+        color: whitesmoke;
+    }
+}

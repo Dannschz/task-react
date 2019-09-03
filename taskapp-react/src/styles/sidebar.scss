@@ -1,0 +1,44 @@
+.task-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-block-start: 80px;
+  padding-inline-end: 20px;
+  padding-block-start: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.336);
+  width: 25%;
+
+  .new-project-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top: 1px solid rgba(128, 128, 128, 0.205);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.205);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px; */
+
+    .new-project-n {
+      color: rgb(83, 83, 83);
+      font-size: 1.2em;
+      padding-right: 25px;
+    }
+
+    .npi {
+      opacity: 0.5;
+      border: none;
+      font-size: 1em;
+      padding: 20px 10px 20px 10px;
+      border-top: 1px solid rgba(128, 128, 128, 0.205);
+      border-bottom: 1px solid rgba(128, 128, 128, 0.205);
+      transition-duration: .2s;
+
+      &:focus {
+        border-top: 1px solid rgb(0, 123, 206);
+        border-bottom: 1px solid rgb(0, 123, 206);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition-duration: .2s;
+      }
+    }
+  }
+}
