@@ -2,42 +2,64 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-block-start: 80px;
-  padding-inline-end: 20px;
-  padding-block-start: 20px;
+  margin-top: 80px;
+  padding-right: 20px;
+  margin-left: 8%;
+  padding-top: 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.336);
-  width: 25%;
+  width: 35%;
+  min-height: 80vh;
 
   .new-project-c {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-top: 1px solid rgba(128, 128, 128, 0.205);
+    width: 100%;
+
+    .new-p-form {
+      display: flex;
+      width: 100%;
+      padding-right: 20px;
+
+      .project-btn {
+        display: flex;
+        justify-content: center;
+        width: 35%;
+        margin-right: 5%;
+        font-size: 1em;
+        border: none;
+        background-color: #fff;
+        border: 2px solid rgb(83, 83, 83);
+        border-radius: 5px;
+        transition-duration: .3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(26, 53, 75);
+          color: whitesmoke;
+          border-color: transparent;
+        }
+      }
+
+
+      .npi {
+        box-sizing: border-box;
+        width: 65%;
+        opacity: 0.5;
+        border: none;
+        font-size: 1em;
+        padding: 20px 10px 20px 10px;
+        border-top: 1px solid rgba(128, 128, 128, 0.205);
         border-bottom: 1px solid rgba(128, 128, 128, 0.205);
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px; */
+        transition-duration: 0.2s;
 
-    .new-project-n {
-      color: rgb(83, 83, 83);
-      font-size: 1.2em;
-      padding-right: 25px;
-    }
-
-    .npi {
-      opacity: 0.5;
-      border: none;
-      font-size: 1em;
-      padding: 20px 10px 20px 10px;
-      border-top: 1px solid rgba(128, 128, 128, 0.205);
-      border-bottom: 1px solid rgba(128, 128, 128, 0.205);
-      transition-duration: .2s;
-
-      &:focus {
-        border-top: 1px solid rgb(0, 123, 206);
-        border-bottom: 1px solid rgb(0, 123, 206);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        transition-duration: .2s;
+        &:focus {
+          border-top: 1px solid rgb(0, 123, 206);
+          border-bottom: 1px solid rgb(0, 123, 206);
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          transition-duration: 0.2s;
+        }
       }
     }
   }
