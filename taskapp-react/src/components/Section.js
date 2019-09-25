@@ -5,10 +5,12 @@ const axios = require('axios');
 
 function Section() {
 
+    // Nombre del nuevo projecto a crear
     const [projectName, setProjectName] = useState('');
+    // Datos de todos los proyectos al hacer peticiones GET al servidor
     const [projects, setProjects] = useState([]);
-
-    const [radioCheck, setRadioCheck] = useState('');
+    // Almacena el nombre del projecto y sirve para checar el boton tipo radio correspondiente
+    const [selectedProject, setSelectedProject] = useState({});
 
     // Controla el input para el nombre del proyecto
     function hanldeProjectName(e) {
@@ -17,7 +19,8 @@ function Section() {
 
     // Controla input radio para seleccionar projecto
     function handleSelectedProject(e) {
-        setRadioCheck(e.target.value);
+        //setSelectedProject(e.target);
+        console.log(projects);
     }
 
     // Guardar un nuevo proyecto en la base de datos
@@ -39,14 +42,15 @@ function Section() {
             try {
                 const response = await axios.get('http://localhost:4000/api/tasks');
                 setProjects(response.data);
+                setSelectedProject(response.data['0']);
                 //console.log(projects);
             } catch (error) {
-                console.error(error);
+                throw error;
             }
         };
         getProjects();
 
-    }, [projects]);
+    }, []);
 
     return (
         <Fragment>
@@ -57,7 +61,12 @@ function Section() {
                             + New Project
                             <input className="input-new-p" type="submit" />
                         </div>
-                        <input className="npi" type="text" value={projectName} onChange={hanldeProjectName} placeholder="Project Name" autoFocus />
+                        <input
+                            className="npi"
+                            type="text"
+                            value={projectName}
+                            onChange={hanldeProjectName}
+                            placeholder="Project Name" autoFocus />
                     </form>
                 </div>
                 <div className="project-sidebar">
@@ -72,7 +81,7 @@ function Section() {
                                         id={project.name}
                                         type="radio"
                                         value={project.name}
-                                        checked={radioCheck === project.name}
+                                        checked={selectedProject.name === project.name}
                                         onChange={handleSelectedProject} />
                                     <label
                                         key={project._id}
@@ -87,7 +96,7 @@ function Section() {
                 </div>
             </aside>
             <section className="section">
-                Tasks content
+                {selectedProject.name}
             </section>
         </Fragment>
     )
